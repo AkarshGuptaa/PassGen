@@ -3,7 +3,10 @@ import random
 low = int(input("Enter lower bound"))
 up = int(input("Enter upper bound"))
 
+score = 0
+games = 0
 while True:
+    games +=1
     print("\nNew Game\n")
     c = random.randrange(low, up)
     d = int(input(f"Guess a number between {low} and {up} (enter 0 to exit): "))
@@ -13,5 +16,7 @@ while True:
         break
     if d == c:
         print(f"Yess you guessed right. The number is indeed {c}")
+        score += 1
     else:
         print(f"Sorry, the number was {c}, not {d}")
+print(f"You got {score} right out of {games}")
